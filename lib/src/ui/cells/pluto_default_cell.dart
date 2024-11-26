@@ -100,6 +100,10 @@ class _PlutoDefaultCellState extends PlutoStateWithChange<PlutoDefaultCell> {
 
   @override
   void updateState(PlutoNotifierEvent event) {
+    final disable =
+        widget.column.disableRowCheckWhen?.call(widget.row) ?? false;
+    if (disable) return;
+
     _hasFocus = update<bool>(
       _hasFocus,
       stateManager.hasFocus,
@@ -354,6 +358,7 @@ class CheckboxSelectionWidgetState
   bool _tristate = false;
 
   bool? _checked;
+  bool _pureValue = false;
 
   @override
   PlutoGridStateManager get stateManager => widget.stateManager;
@@ -361,12 +366,19 @@ class CheckboxSelectionWidgetState
   @override
   void initState() {
     super.initState();
-
     updateState(PlutoNotifierEventForceUpdate.instance);
+    _pureValue = widget.row.checked ?? false;
   }
 
   @override
   void updateState(PlutoNotifierEvent event) {
+    final disable =
+        widget.column.disableRowCheckWhen?.call(widget.row) ?? false;
+    if (disable) {
+      _checked = _pureValue;
+      return;
+    }
+
     _tristate = update<bool>(
       _tristate,
       stateManager.enabledRowGroups && widget.row.type.isGroup,
