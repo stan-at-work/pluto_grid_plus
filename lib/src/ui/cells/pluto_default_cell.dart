@@ -410,9 +410,12 @@ class CheckboxSelectionWidgetState
 
   @override
   Widget build(BuildContext context) {
+    final disable =
+        widget.column.disableRowCheckWhen?.call(widget.row) ?? false;
+
     return PlutoScaledCheckbox(
       value: _checked,
-      handleOnChanged: _handleOnChanged,
+      handleOnChanged: disable ? null : _handleOnChanged,
       tristate: _tristate,
       scale: 0.86,
       unselectedColor: stateManager.configuration.style.cellUnselectedColor,
