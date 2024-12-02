@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import 'package:demo/screen/feature/custom_loading_indicator_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -114,8 +115,7 @@ class HomeScreen extends StatelessWidget {
                                   icon: const FaIcon(FontAwesomeIcons.link),
                                   color: Colors.white,
                                   onPressed: () {
-                                    launchUrl(
-                                        'https://pub.dev/packages/pluto_grid');
+                                    launchUrl('https://pub.dev/packages/pluto_grid');
                                   },
                                 ),
                                 const Text(
@@ -146,8 +146,7 @@ class HomeScreen extends StatelessWidget {
                                   icon: const FaIcon(FontAwesomeIcons.github),
                                   color: Colors.white,
                                   onPressed: () {
-                                    launchUrl(
-                                        'https://github.com/bosskmk/pluto_grid');
+                                    launchUrl('https://github.com/bosskmk/pluto_grid');
                                   },
                                 ),
                                 const Text(
@@ -165,8 +164,7 @@ class HomeScreen extends StatelessWidget {
                               cursor: SystemMouseCursors.click,
                               child: GestureDetector(
                                 onTap: () {
-                                  launchUrl(
-                                      'https://www.buymeacoffee.com/manki');
+                                  launchUrl('https://www.buymeacoffee.com/manki');
                                 },
                                 child: Image.asset(
                                   'assets/images/buy_me_a_coffee.png',
@@ -214,8 +212,7 @@ class PlutoFeatures extends StatelessWidget {
         children: [
           PlutoListTile(
             title: 'Column moving',
-            description:
-                'Dragging the column heading left or right moves the column left and right.',
+            description: 'Dragging the column heading left or right moves the column left and right.',
             onTapLiveDemo: () {
               Navigator.pushNamed(context, ColumnMovingScreen.routeName);
             },
@@ -236,16 +233,14 @@ class PlutoFeatures extends StatelessWidget {
           ),
           PlutoListTile(
             title: 'Column resizing',
-            description:
-                'Dragging the icon to the right of the column title left or right changes the width of the column.',
+            description: 'Dragging the icon to the right of the column title left or right changes the width of the column.',
             onTapLiveDemo: () {
               Navigator.pushNamed(context, ColumnResizingScreen.routeName);
             },
           ),
           PlutoListTile(
             title: 'Column sorting',
-            description:
-                'Ascending or Descending by clicking on the column heading.',
+            description: 'Ascending or Descending by clicking on the column heading.',
             onTapLiveDemo: () {
               Navigator.pushNamed(context, ColumnSortingScreen.routeName);
             },
@@ -273,8 +268,7 @@ class PlutoFeatures extends StatelessWidget {
           ),
           PlutoListTile(
             title: 'Column footer',
-            description:
-                'Display each column fixed at the bottom. (For outputting data sum, average, etc.)',
+            description: 'Display each column fixed at the bottom. (For outputting data sum, average, etc.)',
             onTapLiveDemo: () {
               Navigator.pushNamed(context, ColumnFooterScreen.routeName);
             },
@@ -339,8 +333,7 @@ class PlutoFeatures extends StatelessWidget {
           ),
           PlutoListTile(
             title: 'Row selection',
-            description:
-                'In Row selection mode, Shift + tap or long tap and then move or Control + tap to select a row.',
+            description: 'In Row selection mode, Shift + tap or long tap and then move or Control + tap to select a row.',
             onTapLiveDemo: () {
               Navigator.pushNamed(context, RowSelectionScreen.routeName);
             },
@@ -361,8 +354,7 @@ class PlutoFeatures extends StatelessWidget {
           ),
           PlutoListTile(
             title: 'Row lazy pagination',
-            description:
-                'Implement pagination in the form of fetching data from the server.',
+            description: 'Implement pagination in the form of fetching data from the server.',
             onTapLiveDemo: () {
               Navigator.pushNamed(context, RowLazyPaginationScreen.routeName);
             },
@@ -402,32 +394,28 @@ class PlutoFeatures extends StatelessWidget {
           ),
           PlutoListTile(
             title: 'Cell selection',
-            description:
-                'In cell selection mode, Shift + tap or long tap and then move to select cells.',
+            description: 'In cell selection mode, Shift + tap or long tap and then move to select cells.',
             onTapLiveDemo: () {
               Navigator.pushNamed(context, CellSelectionScreen.routeName);
             },
           ),
           PlutoListTile(
             title: 'Cell renderer',
-            description:
-                'You can change the widget of the cell through the renderer.',
+            description: 'You can change the widget of the cell through the renderer.',
             onTapLiveDemo: () {
               Navigator.pushNamed(context, CellRendererScreen.routeName);
             },
           ),
           PlutoListTile(
             title: 'Copy and Paste',
-            description:
-                'Copy and paste are operated depending on the cell and row selection status.',
+            description: 'Copy and paste are operated depending on the cell and row selection status.',
             onTapLiveDemo: () {
               Navigator.pushNamed(context, CopyAndPasteScreen.routeName);
             },
           ),
           PlutoListTile(
             title: 'Moving',
-            description:
-                'Change the current cell position with the arrow keys, enter key, and tab key.',
+            description: 'Change the current cell position with the arrow keys, enter key, and tab key.',
             onTapLiveDemo: () {
               Navigator.pushNamed(context, MovingScreen.routeName);
             },
@@ -450,22 +438,19 @@ class PlutoFeatures extends StatelessWidget {
             title: 'Add and Remove Columns, Rows',
             description: 'You can add or delete columns, rows.',
             onTapLiveDemo: () {
-              Navigator.pushNamed(
-                  context, AddAndRemoveColumnRowScreen.routeName);
+              Navigator.pushNamed(context, AddAndRemoveColumnRowScreen.routeName);
             },
           ),
           PlutoListTile(
             title: 'Dual mode',
-            description:
-                'Place the grid on the left and right and move or edit with the keyboard.',
+            description: 'Place the grid on the left and right and move or edit with the keyboard.',
             onTapLiveDemo: () {
               Navigator.pushNamed(context, DualModeScreen.routeName);
             },
           ),
           PlutoListTile(
             title: 'Grid as Popup',
-            description:
-                'You can call the grid by popping up with the TextField.',
+            description: 'You can call the grid by popping up with the TextField.',
             onTapLiveDemo: () {
               Navigator.pushNamed(context, GridAsPopupScreen.routeName);
             },
@@ -491,10 +476,16 @@ class PlutoFeatures extends StatelessWidget {
               Navigator.pushNamed(context, DarkModeScreen.routeName);
             },
           ),
+          PlutoListTile(
+            title: 'Custom Loading Indicator',
+            description: 'Define a custom loading indicator.',
+            onTapLiveDemo: () {
+              Navigator.pushNamed(context, CustomLoadingIndicatorScreen.routeName);
+            },
+          ),
           PlutoListTile.amber(
             title: 'Development',
-            description:
-                'This screen is used during development, and various functions can be tested.',
+            description: 'This screen is used during development, and various functions can be tested.',
             onTapLiveDemo: () {
               Navigator.pushNamed(context, DevelopmentScreen.routeName);
             },
