@@ -95,9 +95,6 @@ class _CustomLoadingIndicatorScreenState
                 columns: columns,
                 rows: rows,
                 mode: PlutoGridMode.readOnly,
-                onChanged: (PlutoGridOnChangedEvent event) {
-                  print(event);
-                },
                 onLoaded: (PlutoGridOnLoadedEvent event) {
                   setState(() => stateManager = event.stateManager);
 
