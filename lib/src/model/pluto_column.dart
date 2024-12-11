@@ -152,7 +152,7 @@ class PlutoColumn {
 
   bool enableTitleChecked;
 
-  bool Function(PlutoRow row)? disableRowCheckWhen;
+  bool Function(PlutoRow row)? disableRowCheckboxWhen;
 
   /// Sort rows by tapping on the column heading.
   bool enableSorting;
@@ -262,7 +262,7 @@ class PlutoColumn {
     this.enableAutoEditing = false,
     this.enableEditingMode = true,
     this.hide = false,
-    this.disableRowCheckWhen,
+    this.disableRowCheckboxWhen,
   })  : _key = UniqueKey(),
         _checkReadOnly = checkReadOnly;
 

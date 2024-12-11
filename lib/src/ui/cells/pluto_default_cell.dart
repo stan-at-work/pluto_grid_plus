@@ -101,7 +101,7 @@ class _PlutoDefaultCellState extends PlutoStateWithChange<PlutoDefaultCell> {
   @override
   void updateState(PlutoNotifierEvent event) {
     final disable =
-        widget.column.disableRowCheckWhen?.call(widget.row) ?? false;
+        widget.column.disableRowCheckboxWhen?.call(widget.row) ?? false;
     if (disable) return;
 
     _hasFocus = update<bool>(
@@ -373,7 +373,7 @@ class CheckboxSelectionWidgetState
   @override
   void updateState(PlutoNotifierEvent event) {
     final disable =
-        widget.column.disableRowCheckWhen?.call(widget.row) ?? false;
+        widget.column.disableRowCheckboxWhen?.call(widget.row) ?? false;
     if (disable) {
       _checked = _pureValue;
       return;
@@ -423,7 +423,7 @@ class CheckboxSelectionWidgetState
   @override
   Widget build(BuildContext context) {
     final disable =
-        widget.column.disableRowCheckWhen?.call(widget.row) ?? false;
+        widget.column.disableRowCheckboxWhen?.call(widget.row) ?? false;
 
     return PlutoScaledCheckbox(
       value: _checked,
