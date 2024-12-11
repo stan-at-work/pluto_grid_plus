@@ -84,6 +84,7 @@ class PlutoGridStateChangeNotifier extends PlutoChangeNotifier
     this.onRowEnter,
     this.onRowExit,
     this.onRowsMoved,
+    this.onActiveCellChanged,
     this.onColumnsMoved,
     this.rowColorCallback,
     this.selectDateCallback,
@@ -108,8 +109,9 @@ class PlutoGridStateChangeNotifier extends PlutoChangeNotifier
     _initialize();
   }
 
+  /// {@macro pluto_grid_row_wrapper}
   @override
-  final Widget Function(Widget rowWidget)? rowWrapper;
+  final RowWrapper? rowWrapper;
 
   @override
   final Widget Function(Widget editCellWidget, PlutoCell cell,
@@ -156,6 +158,9 @@ class PlutoGridStateChangeNotifier extends PlutoChangeNotifier
 
   @override
   final PlutoOnRowsMovedEventCallback? onRowsMoved;
+
+  @override
+  final PlutoOnActiveCellChangedEventCallback? onActiveCellChanged;
 
   @override
   final PlutoOnColumnsMovedEventCallback? onColumnsMoved;
@@ -249,6 +254,7 @@ class PlutoGridStateManager extends PlutoGridStateChangeNotifier {
     super.onRowEnter,
     super.onRowExit,
     super.onRowsMoved,
+    super.onActiveCellChanged,
     super.onColumnsMoved,
     super.rowColorCallback,
     super.selectDateCallback,
