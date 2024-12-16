@@ -203,7 +203,9 @@ class PlutoColumnFilterState extends PlutoStateWithChange<PlutoColumnFilter> {
         column: widget.column,
         filterType: widget.column.defaultFilter,
         filterValue: changed,
-        debounceMilliseconds: stateManager.configuration.columnFilter.debounceMilliseconds,
+        eventType: PlutoGridEventType.debounce,
+        debounceMilliseconds:
+            stateManager.configuration.columnFilter.debounceMilliseconds,
       ),
     );
   }
